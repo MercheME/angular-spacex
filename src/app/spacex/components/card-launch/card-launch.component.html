@@ -1,0 +1,40 @@
+
+
+<div *ngIf="launch" class="container">
+
+  <div class="card border-dark bg-black text-light">
+
+    <lazy-image-shared
+      class="card-img-bottom p-4 align-self-center"
+      style="width: 13rem;"
+      [url]="launch.links.patch.large ? launch.links.patch.large : '/assets/rocket.svg'"
+      [alt]="launch.name || 'No name'"
+    >
+    </lazy-image-shared>
+
+    <div class="card-body m-1 border-1">
+
+      <h5 class="card-title">{{ launch.name }}</h5>
+
+      <p class="card-text">{{ launch.details }}</p>
+      <p class="card-text">{{ launch.date_local | date }}</p>
+
+      <p class="card-text">
+        <small [ngClass]="launch.success ? 'text-success' : 'text-danger'">
+          <b>{{ launch.success ? '✨ El lanzamiento ha sido un éxito! ' : '❌ El lanzamiento ha fallado ' }}</b>
+        </small>
+      </p>
+
+
+      <button class="btn btn-secondary "
+        (click)="goBack()">
+          Volver atrás
+      </button>
+      
+    </div>
+
+  </div>
+
+</div>
+
+

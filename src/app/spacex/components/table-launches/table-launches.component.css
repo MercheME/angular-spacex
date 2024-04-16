@@ -1,0 +1,19 @@
+.table-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo personalizado para el thumb de la barra de desplazamiento */
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #474747;
+  border-radius: 2px;
+}
+
+/* Estilo personalizado para la pista (track) de la barra de desplazamiento */
+.table-container::-webkit-scrollbar-track {
+  background: #6c6d6d;
+}

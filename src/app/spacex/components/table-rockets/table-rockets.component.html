@@ -1,0 +1,51 @@
+
+<div *ngIf="rocketsList.length === 0; else table" class="alert alert-warning text-center">
+  No hay cohetes que mostrar
+</div>
+
+<ng-template #table>
+  <div class="table-container mt-3">
+
+    <table class="table table-dark  mb-3" >
+      <thead>
+        <tr>
+          <th>🔗 Rocket Name</th>
+          <th>🔗 First Flight</th>
+          <th>🔗 Country</th>
+          <th>🔗 Company</th>
+          <th>🔗 Cost per Launch</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let rocket of rocketsList; let i = index">
+
+          <td class="text-bg-dark">
+            Flight #: {{ rocket.name }}
+          </td>
+
+          <td class="text-bg-dark">
+            {{ rocket.first_flight | date }}
+          </td>
+
+          <td class=" text-bg-dark">
+            {{ rocket.country }}
+          </td>
+
+          <td class="text-bg-dark">
+            {{ rocket.company }}
+          </td>
+
+          <td class="text-bg-dark">
+            {{ rocket.cost_per_launch | currency: 'EUR' }}
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</ng-template>

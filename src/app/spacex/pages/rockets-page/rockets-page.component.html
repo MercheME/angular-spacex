@@ -1,0 +1,46 @@
+
+<div class="container text-light">
+  <div class="row mb-5">
+
+    <div class="container mt-3 mb-5">
+      <h4>Rocket History: </h4>
+      <table-rockets [rocketsList]="rocketsList"></table-rockets>
+    </div>
+
+    <div class="container col-lg-4 col-md-8 col-sm-12 mt-3 mb-5">
+      <div class="card p-1 bg-dark text-light">
+        <div class="card-body bg-black">
+          <h5 class="card-title mx-2 mt-2">🔗 More information:</h5>
+          <p class="card-text mx-3">Where is the rocket with more weight?</p>
+          <p class="card-text mx-3 mb-2">{{ maxWeightRocket.name }} - {{ maxWeightRocket.mass.kg }} KG</p>
+         </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="container mb-5">
+    <div class="row justify-content-center">
+
+      <div class="col-lg-10 d-flex flex-wrap justify-content-center text-light">
+
+        <div *ngFor="let rocket of rocketsList" class="col-lg-4 col-md-6 m-3">
+
+          <img src="{{ rocket.flickr_images }}"
+            alt="{{ rocket.name }}" class="img-fluid"
+            style="width: 20rem; height: 250px;"
+          >
+
+          <small class="d-flex mt-2">{{ rocket.name }}</small>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

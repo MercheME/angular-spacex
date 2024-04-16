@@ -1,0 +1,55 @@
+
+<div *ngIf="launchlist.length === 0; else table"
+  class="alert alert-warning text-center p-2 m-3">
+  No hay lanzamientos que mostrar
+</div>
+
+<ng-template #table>
+
+  <div class="table-container mt-3">
+
+    <table class="table table-dark mb-3" >
+      <thead class="table-hover">
+        <tr>
+          <th>🔗 Flight Number</th>
+          <th>🔗 Flight Name</th>
+          <th>🔗 Flight Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let launch of launchlist; let i = index">
+
+          <td>
+            <a [routerLink]="[ './', launch.id ]"
+              class="text-decoration-none text-bg-dark text-primary"
+            >
+              Flight #: {{ i + 1 }}
+            </a>
+          </td>
+
+          <td>
+            <a [routerLink]="[ './', launch.id ]"
+            class="text-decoration-none text-bg-dark  text-secondary"
+            >
+              {{ launch.name }}
+            </a>
+          </td>
+
+          <td>
+            <a [routerLink]="[ './', launch.id ]"
+              class="text-decoration-none text-bg-dark text-secondary"
+            >
+              {{ launch.date_local | date }}
+            </a>
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</ng-template>
